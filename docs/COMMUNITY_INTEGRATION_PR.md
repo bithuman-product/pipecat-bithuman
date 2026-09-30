@@ -86,6 +86,8 @@ uv add "pipecat-bithuman[expression-2]"
 
 - `BITHUMAN_API_SECRET`: your bitHuman API secret.
 - `BITHUMAN_MODEL_PATH`: path to the `.imx` model (or pass `model_path`).
+
+Rendering bills active session time: 2 credits a minute on your own machine. From 2026-10-12, SDK use requires the Creator plan or higher. See docs.bithuman.ai/pricing.
 ````
 
 ### 3b. Configuration
@@ -192,5 +194,5 @@ Maintainer: bitHuman, Inc. (sgu@bithuman.ai)
 | Public GitHub repo | TODO. Owner creates `bithuman-product/pipecat-bithuman` |
 | Published on PyPI | TODO. Owner/main session publishes 0.1.0 (twine by hand) |
 | Demo video, 30-60 s, with an interruption | TODO. Main session |
-| Docs PR (sections 1-3) | READY. Not submitted |
+| Docs PR (sections 1-3) | READY after: public repo, PyPI 0.1.0, one live test run (PIPECAT_BITHUMAN_LIVE=1, a few billed seconds on a house avatar), one bot.py run, and the demo video. Not submitted |
 | Join Discord, post in `#community-integrations` | TODO. Human only, after the PR |

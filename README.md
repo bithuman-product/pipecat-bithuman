@@ -29,6 +29,8 @@ pip install "pipecat-bithuman[expression-2]"
 Session time is metered while the avatar is open (talking or idle).
 It closes on `EndFrame`, `CancelFrame` or cleanup.
 
+Rendering bills active session time: 2 credits a minute on your own machine. From 2026-10-12, SDK use requires the Creator plan or higher. See docs.bithuman.ai/pricing.
+
 ## Usage
 
 Put `BitHumanVideoService` after the TTS service and before `transport.output()`:
