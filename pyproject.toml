@@ -1,0 +1,84 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pipecat-bithuman"
+version = "0.1.0"
+description = "bitHuman real-time avatar video service for Pipecat: TTS audio in, lip-synced avatar video and audio out."
+readme = "README.md"
+license = "BSD-2-Clause"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "bitHuman, Inc." }]
+keywords = ["pipecat", "bithuman", "avatar", "video", "voice-agent", "lip-sync", "real-time"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pipecat-ai>=1.12.0",
+    "bithuman>=2.11.18,<3",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+# Expression 2 avatars (any character from one portrait) need the SDK extra.
+expression-2 = ["bithuman[expression-2]>=2.11.18,<3"]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.6",
+]
+
+[project.urls]
+Homepage = "https://www.bithuman.ai"
+Documentation = "https://docs.bithuman.ai/platforms/python"
+Source = "https://github.com/bithuman-product/pipecat-bithuman"
+Issues = "https://github.com/bithuman-product/pipecat-bithuman/issues"
+Changelog = "https://github.com/bithuman-product/pipecat-bithuman/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pipecat_bithuman"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/pipecat_bithuman",
+    "tests",
+    "examples",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "live: talks to the real bitHuman SDK with a real API secret (bills session time; opt-in only)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "D", "UP", "B"]
+ignore = ["D105", "D107"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
+"examples/*" = ["D"]
