@@ -36,7 +36,7 @@ async def main():
             audio_in_enabled=True,
             audio_out_enabled=True,
             video_out_enabled=True,
-            video_out_width=1280,
+            video_out_width=416,   # the wise-pup sample's frame size; the service logs yours
             video_out_height=720,
         ),
     )
