@@ -11,6 +11,9 @@ Maintained by bitHuman, Inc. (community integration, not maintained by the Pipec
 
 **Tested with Pipecat v1.12.0**, `bithuman` 2.11.18, Python 3.11 to 3.14.
 
+**Demo (30 s):** [docs/demo.mp4](docs/demo.mp4), rendered through a Pipecat pipeline by
+[`examples/render_demo.py`](examples/render_demo.py) with the Expression 2 sample avatar Wise Pup.
+
 ## Install
 
 ```bash
