@@ -16,7 +16,7 @@ import tempfile
 import wave
 from pathlib import Path
 
-from pipecat.frames.frames import OutputImageRawFrame, TTSAudioRawFrame
+from pipecat.frames.frames import InterruptionFrame, OutputImageRawFrame, TTSAudioRawFrame
 from pipecat.tests.utils import SleepFrame, run_test
 
 from pipecat_bithuman import BitHumanVideoService
@@ -37,9 +37,13 @@ def speech_frames(path: Path, repeat: int) -> list[TTSAudioRawFrame]:
     return frames
 
 
-async def render(speech: Path, out: Path, repeat: int) -> None:
+async def render(speech: Path, out: Path, repeat: int, interrupt_at: float = 0.0) -> None:
     sent = speech_frames(speech, repeat)
-    seconds = sum(len(f.audio) / 2 / f.sample_rate for f in sent)
+    if interrupt_at > 0:
+        # barge-in: the reply plays for `interrupt_at` seconds, the user interrupts, and a new
+        # reply (the speech again, `repeat` times) follows
+        first = speech_frames(speech, 1)[: int(interrupt_at / CHUNK_S)]
+        sent = first + [SleepFrame(sleep=interrupt_at), InterruptionFrame()] + sent
     down, _ = await run_test(BitHumanVideoService(),
                              frames_to_send=sent + [SleepFrame(sleep=3.0)], start_timeout=60.0)
     images = [f for f in down if isinstance(f, OutputImageRawFrame)]
@@ -47,6 +51,7 @@ async def render(speech: Path, out: Path, repeat: int) -> None:
     if not images:
         raise SystemExit("no avatar frames came out")
     w, h = images[0].size
+    seconds = len(audio) / 2 / 16000          # the speech that actually played with the frames
     fps = round(len(images) / max(seconds, 0.1))
     with tempfile.TemporaryDirectory() as tmp:
         wav = Path(tmp) / "speech.wav"
@@ -69,5 +74,7 @@ if __name__ == "__main__":
     ap.add_argument("speech", type=Path)
     ap.add_argument("out", type=Path)
     ap.add_argument("--repeat", type=int, default=1)
+    ap.add_argument("--interrupt-at", type=float, default=0.0,
+                    help="barge in after this many seconds of the first reply")
     a = ap.parse_args()
-    asyncio.run(render(a.speech, a.out, a.repeat))
+    asyncio.run(render(a.speech, a.out, a.repeat, a.interrupt_at))
