@@ -1,5 +1,7 @@
 # pipecat-bithuman
 
+[![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/x3tMhJvX4X) Questions, demos and challenges: [join the bitHuman Discord](https://discord.gg/x3tMhJvX4X).
+
 A [bitHuman](https://www.bithuman.ai) avatar for your [Pipecat](https://github.com/pipecat-ai/pipecat) bot.
 Your TTS audio goes in. A lip-synced avatar video, plus the audio that goes with it, comes out.
 
