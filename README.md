@@ -1,3 +1,8 @@
+<!-- gitlab-migration: moved -->
+> **This repository moved to GitLab: [gitlab.com/bithuman/sdk/pipecat-bithuman](https://gitlab.com/bithuman/sdk/pipecat-bithuman).**
+> This GitHub copy is archived (read-only) and is no longer updated; `pip install pipecat-bithuman`
+> is unchanged. Source, issues and the changelog: https://gitlab.com/bithuman/sdk/pipecat-bithuman
+
 # pipecat-bithuman
 
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/x3tMhJvX4X) Questions, demos and challenges: [join the bitHuman Discord](https://discord.gg/x3tMhJvX4X).
