@@ -6,6 +6,10 @@ and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- The repository moved to GitLab: https://gitlab.com/bithuman/sdk/pipecat-bithuman (source, issues, changelog). The package name and `pip install pipecat-bithuman` are unchanged; the GitHub copy is archived and stays readable.
+
 ## [0.1.0] - 2026-09-30
 
 ### Added

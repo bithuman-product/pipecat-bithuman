@@ -51,9 +51,9 @@ description: "BitHumanVideoService renders a lip-synced bitHuman avatar in your 
 import { CommunityMaintained } from "/snippets/community-maintained.mdx";
 
 <CommunityMaintained
-  maintainer="bithuman-product"
-  maintainerUrl="https://github.com/bithuman-product"
-  repo="https://github.com/bithuman-product/pipecat-bithuman"
+  maintainer="bitHuman"
+  maintainerUrl="https://gitlab.com/bithuman"
+  repo="https://gitlab.com/bithuman/sdk/pipecat-bithuman"
 />
 
 ## Overview
@@ -147,7 +147,7 @@ Enable `video_out_enabled=True` on the transport. The service logs the frame siz
 first frame; set `video_out_width` and `video_out_height` to match.
 
 A complete example is in the
-[repository](https://github.com/bithuman-product/pipecat-bithuman/blob/main/examples/bot.py).
+[repository](https://gitlab.com/bithuman/sdk/pipecat-bithuman/-/blob/main/examples/bot.py).
 
 ## Compatibility
 
@@ -169,7 +169,7 @@ Adds bitHuman as a community-maintained video service.
 - docs.json navigation + redirect
 
 Package: https://pypi.org/project/pipecat-bithuman/
-Repo: https://github.com/bithuman-product/pipecat-bithuman
+Repo: https://gitlab.com/bithuman/sdk/pipecat-bithuman
 Demo video (about 45 s, includes a barge-in): <LINK - main session>
 Tested with Pipecat v1.12.0.
 Maintainer: bitHuman, Inc. (sgu@bithuman.ai)
@@ -191,7 +191,7 @@ Maintainer: bitHuman, Inc. (sgu@bithuman.ai)
 | setup/cleanup and start/stop/cancel, idempotent cleanup | DONE. Tested |
 | Unit tests (optional) | DONE. 14 pass, 1 live test skipped by default |
 | `pipecat eval run` on the example | TODO. Needs keys and a model; bills session time |
-| Public GitHub repo | TODO. Owner creates `bithuman-product/pipecat-bithuman` |
+| Public repo | DONE. https://gitlab.com/bithuman/sdk/pipecat-bithuman (public; the GitHub copy is archived) |
 | Published on PyPI | TODO. Owner/main session publishes 0.1.0 (twine by hand) |
 | Demo video, 30-60 s, with an interruption | TODO. Main session |
 | Docs PR (sections 1-3) | READY after: public repo, PyPI 0.1.0, one live test run (PIPECAT_BITHUMAN_LIVE=1, a few billed seconds on a house avatar), one bot.py run, and the demo video. Not submitted |

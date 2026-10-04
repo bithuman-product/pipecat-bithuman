@@ -44,9 +44,9 @@ dev = [
 [project.urls]
 Homepage = "https://www.bithuman.ai"
 Documentation = "https://docs.bithuman.ai/platforms/python"
-Source = "https://github.com/bithuman-product/pipecat-bithuman"
-Issues = "https://github.com/bithuman-product/pipecat-bithuman/issues"
-Changelog = "https://github.com/bithuman-product/pipecat-bithuman/blob/main/CHANGELOG.md"
+Source = "https://gitlab.com/bithuman/sdk/pipecat-bithuman"
+Issues = "https://gitlab.com/bithuman/sdk/pipecat-bithuman/-/issues"
+Changelog = "https://gitlab.com/bithuman/sdk/pipecat-bithuman/-/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pipecat_bithuman"]

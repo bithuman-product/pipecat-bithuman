@@ -120,7 +120,7 @@ It opens the avatar for a few seconds, and that time is billed.
 
 - bitHuman: [www.bithuman.ai](https://www.bithuman.ai)
 - Docs: [docs.bithuman.ai](https://docs.bithuman.ai)
-- Examples: [github.com/bithuman-product/bithuman-examples](https://github.com/bithuman-product/bithuman-examples)
+- Examples: [gitlab.com/bithuman/sdk/bithuman-examples](https://gitlab.com/bithuman/sdk/bithuman-examples)
 - Contact: sgu@bithuman.ai
 
 ## Licence
